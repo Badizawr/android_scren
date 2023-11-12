@@ -44,88 +44,101 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun WelcomeScreen2(modifier: Modifier = Modifier) {
-    Box(
-        modifier = modifier
-            .requiredWidth(width = 375.dp)
-            .requiredHeight(height = 812.dp)
-            .clip(shape = RoundedCornerShape(40.dp))
-            .background(
-                brush = Brush.linearGradient(
-                    0f to Color(0xff92a3fd),
-                    1f to Color(0xff9dceff),
-                    start = Offset(375f, 812f),
-                    end = Offset(-89.84f, -249.85f)
-                )
-            )
+    Surface(
+        modifier = Modifier.fillMaxSize(),
     ) {
         Box(
-            modifier = Modifier
-                .align(alignment = Alignment.TopStart)
-                .offset(
-                    x = 30.dp,
-                    y = 712.dp
-                )
-                .requiredWidth(width = 315.dp)
-                .requiredHeight(height = 60.dp)
-                .clip(shape = RoundedCornerShape(99.dp))
-                .background(color = Color.White))
-        Text(
-            text = "Get Started",
-            style = TextStyle(
-                fontSize = 16.sp,
-                fontWeight = FontWeight.Bold),
-            modifier = Modifier
-                .align(alignment = Alignment.TopStart)
-                .offset(
-                    x = 140.dp,
-                    y = 730.dp
-                ))
-        Box(
-            modifier = Modifier
-                .align(alignment = Alignment.TopStart)
-                .offset(
-                    x = 95.dp,
-                    y = 351.dp
-                )
-                .requiredWidth(width = 185.dp)
-                .requiredHeight(height = 90.dp)
-        ) {
-            Text(
-                text = "Everybody Can Train",
-                color = Color(0xff7b6f72),
-                style = TextStyle(
-                    fontSize = 18.sp),
-                modifier = Modifier
-                    .align(alignment = Alignment.TopStart)
-                    .offset(
-                        x = 0.dp,
-                        y = 70.dp
+            modifier = modifier
+                .requiredWidth(width = 375.dp)
+                .requiredHeight(height = 812.dp)
+                .clip(shape = RoundedCornerShape(40.dp))
+                .background(
+                    brush = Brush.linearGradient(
+                        0f to Color(0xff92a3fd),
+                        1f to Color(0xff9dceff),
+                        start = Offset(375f, 812f),
+                        end = Offset(-89.84f, -249.85f)
                     )
-                    .requiredWidth(width = 185.dp)
-                    .requiredHeight(height = 20.dp))
+                )
+        ) {
             Box(
                 modifier = Modifier
                     .align(alignment = Alignment.TopStart)
                     .offset(
-                        x = 11.dp,
-                        y = 0.dp
+                        x = 30.dp,
+                        y = 712.dp
                     )
-                    .requiredWidth(width = 168.dp)
-                    .requiredHeight(height = 75.dp)
+                    .requiredWidth(width = 315.dp)
+                    .requiredHeight(height = 60.dp)
+                    .clip(shape = RoundedCornerShape(99.dp))
+                    .background(color = Color.White))
+            Text(
+                text = "Get Started",
+                style = TextStyle(
+                    fontSize = 16.sp,
+                    fontWeight = FontWeight.Bold),
+                modifier = Modifier
+                    .align(alignment = Alignment.TopStart)
+                    .offset(
+                        x = 140.dp,
+                        y = 730.dp
+                    ))
+            Box(
+                modifier = Modifier
+                    .align(alignment = Alignment.TopStart)
+                    .offset(
+                        x = 95.dp,
+                        y = 351.dp
+                    )
+                    .requiredWidth(width = 185.dp)
+                    .requiredHeight(height = 90.dp)
             ) {
                 Text(
-                    text = buildAnnotatedString {
-                        withStyle(style = SpanStyle(
-                            color = Color(0xff1d1617),
-                            fontSize = 36.sp,
-                            fontWeight = FontWeight.Bold)
-                        ) {append("Fitness")}
-                        withStyle(style = SpanStyle(
-                            color = Color.White,
-                            fontSize = 50.sp,
-                            fontWeight = FontWeight.Bold)) {append("X")}},
+                    text = "Everybody Can Train",
+                    color = Color(0xff7b6f72),
+                    style = TextStyle(
+                        fontSize = 18.sp
+                    ),
                     modifier = Modifier
-                        .wrapContentHeight(align = Alignment.CenterVertically))
+                        .align(alignment = Alignment.TopStart)
+                        .offset(
+                            x = 0.dp,
+                            y = 70.dp
+                        )
+                        .requiredWidth(width = 185.dp)
+                        .requiredHeight(height = 20.dp)
+                )
+                Box(
+                    modifier = Modifier
+                        .align(alignment = Alignment.TopStart)
+                        .offset(
+                            x = 11.dp,
+                            y = 0.dp
+                        )
+                        .requiredWidth(width = 168.dp)
+                        .requiredHeight(height = 75.dp)
+                ) {
+                    Text(
+                        text = buildAnnotatedString {
+                            withStyle(
+                                style = SpanStyle(
+                                    color = Color(0xff1d1617),
+                                    fontSize = 36.sp,
+                                    fontWeight = FontWeight.Bold
+                                )
+                            ) { append("Fitness") }
+                            withStyle(
+                                style = SpanStyle(
+                                    color = Color.White,
+                                    fontSize = 50.sp,
+                                    fontWeight = FontWeight.Bold
+                                )
+                            ) { append("X") }
+                        },
+                        modifier = Modifier
+                            .wrapContentHeight(align = Alignment.CenterVertically)
+                    )
+                }
             }
         }
     }
